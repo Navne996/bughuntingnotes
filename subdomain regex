@@ -1,0 +1,1 @@
+sed 's/A.*//'subdomain.txt | sed 's/CN.*//' | sed 's/\..$//' > live_subdomains.txt
