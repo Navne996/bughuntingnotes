@@ -1,0 +1,23 @@
+//enumerate subdomain from amass
+amass enum -d domain_name -passive -o output_path
+
+//first clone massdns git repo in tools folder in /home/kali/Tools
+git clone https://github.com/blechschmidt/massdns.git
+
+// then open massdns folder and use make cmd to get list folder
+make
+
+// go to the bin folder in massdns and put the path in environment variable
+cp massdns /usr/local/bin
+
+// to resolve the enumerated subdomains using massdns to create resolved domains
+massdns -r /home/kali/Tools/massdns/lists/resolvers.txt -t A -o S enumerated_subdomain_file -w output_path
+
+//this is used to remove the A and CName and ip in the resolved domain txt
+sed 's/A.*//'subdomain.txt | sed 's/CN.*//' | sed 's/\..$//' > live_subdomains.txt
+
+//To remove duplicate or repetitive url
+awk '!seen[$0]++' >> new output file
+
+find First No Rate Limit Bug in the Sub Domains
+https://youtu.be/ThmI-EMI8Po
