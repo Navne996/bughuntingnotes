@@ -19,5 +19,8 @@ sed 's/A.*//'subdomain.txt | sed 's/CN.*//' | sed 's/\..$//' > live_subdomains.t
 //To remove duplicate or repetitive url
 awk '!seen[$0]++' >> new output file
 
+//add https:// for all line for httpx
+sed -e 's/^/prefix/' file > file.new
+
 find First No Rate Limit Bug in the Sub Domains
 https://youtu.be/ThmI-EMI8Po
