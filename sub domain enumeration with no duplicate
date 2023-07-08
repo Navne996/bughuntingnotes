@@ -15,3 +15,6 @@ massdns -r /home/kali/Tools/massdns/lists/resolvers.txt -t A -o S enumerated_sub
 
 //this is used to remove the A and CName and ip in the resolved domain txt
 sed 's/A.*//'subdomain.txt | sed 's/CN.*//' | sed 's/\..$//' > live_subdomains.txt
+
+//To remove duplicate or repetitive url
+awk '!seen[$0]++' >> new output file
