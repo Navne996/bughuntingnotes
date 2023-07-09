@@ -19,6 +19,10 @@ sed 's/A.*//'subdomain.txt | sed 's/CN.*//' | sed 's/\..$//' > live_subdomains.t
 //To remove duplicate or repetitive url
 awk '!seen[$0]++' >> new output file
 
+//to find 200 response urls
+cat source file | httprobe | tee > output file
+
+//optional not required 
 //add https:// for all line for httpx
 sed -e 's/^/prefix/' file > file.new
 
