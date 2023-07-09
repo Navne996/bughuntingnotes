@@ -17,7 +17,7 @@ massdns -r /home/kali/Tools/massdns/lists/resolvers.txt -t A -o S enumerated_sub
 sed 's/A.*//'subdomain.txt | sed 's/CN.*//' | sed 's/\..$//' > live_subdomains.txt
 
 //To remove duplicate or repetitive url
-awk '!seen[$0]++' >> new output file
+awk '!seen[$0]++' subdomains.txt >> live.txt
 
 //to find 200 response urls
 cat source file | httprobe | tee > output file
