@@ -1,0 +1,20 @@
+open Kali linux
+
+clone xsstrike repo in tools folder
+git clone https://github.com/s0md3v/XSStrike
+
+then change directory to xsstrike by 
+cd xsstrike
+
+then install all requirements for the xsstrike by
+pip install -r requirements.txt
+
+then use this command for crawling the site by
+python3 xsstrike.py -u http://demo.testfire.net/  --crawl -l 4 
+
+then for automation
+echo testphp.vulnweb.com | gau | while read url;do python3 xsstrike.py -u $url; done;
+
+https://www.youtube.com/watch?v=4sWkpYKoxCE
+
+
